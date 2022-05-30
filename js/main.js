@@ -240,3 +240,62 @@ function comprobarMenor(a,b,c){
 //     }
 
 // }
+
+
+// ------------------------AdivinaNúmero--------------------------------
+
+let limiteS =100;
+let limiteI = 0;
+adivinaInferior(limiteI, limiteS);
+
+// if(confirm("Tu número es menor o igual a "+ b + " ?")){
+//   definirLimite(limiteI,limiteS);
+// }else{
+//   adivinaSuperior(50,b);
+// }
+
+function adivinaInferior(a,b){
+  if(confirm("Tu número es menor o igual a "+ b + " ?")){
+    b=sacarMitad(a,b);
+    console.log( a );
+    console.log( b );
+    adivinaInferior(a,b);
+
+  }else{
+    a=sacarMitad(a,b);
+    console.log(a);
+    console.log(b);
+    adivinaSuperior(a,b);
+  }
+}
+
+function adivinaSuperior(a,b){
+  console.log(a)
+  console.log(b)
+  if(confirm("tu número es mayor o igual a " + a)){
+    console.log(a);
+    console.log(b);
+    adivinaInferior(a,b);
+  }else{
+    console.log(a);
+    console.log(b)
+    adivinaInferior(a,b)
+  }
+}
+
+
+function sacarMitad(a,b){
+  return parseInt(((a+b)+1)/2);
+}
+
+// function adivina(a,b){
+//   let nuevoLimite = parseInt (a/2);
+//   console.log(nuevoLimite)
+//   if (confirm("Tu número es menor o igual a " + nuevoLimite)) {
+//     adivina(nuevoLimite);
+//   }else{
+//     limiteI=nuevoLimite;
+//     adivina(limiteI);
+//   }
+// }
+
